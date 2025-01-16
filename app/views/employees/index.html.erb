@@ -1,0 +1,37 @@
+<div class="min-h-[calc(100vh-20vh)] flex flex-col items-center justify-center">
+  <% if flash[:notice] %>
+    <div class="bg-green-600 text-gray-200 px-3 py-2 rounded-lg mb-6">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+      <% if @employees.empty? %>
+          <p class="px-4 py-2 text-center text-gray-500">No users</p>
+      <% else %>
+  <table class="w-full max-w-2xl rounded-lg shadow-lg">
+    <thead>
+      <tr class="border border-white/15">
+        <th class="px-4 py-2 text-left">Name</th>
+        <th class="px-4 py-2 text-left">Age</th>
+        <th class="px-4 py-2 text-left">Email Address</th>
+        <th class="px-4 py-2 text-left">Password</th>
+        <th class="px-4 py-2 text-left">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @employees.each do |employee| %>
+        <tr class="border border-white/15">
+          <td class="px-4 py-2"><%= employee.username %></td>
+          <td class="px-4 py-2"><%= employee.age %></td>
+          <td class="px-4 py-2"><%= employee.email %></td>
+          <td class="px-4 py-2"><%= employee.password %></td>
+          <td class="px-4 py-2">
+            <%= link_to "Edit", "/employees/#{employee.id}/edit", class: "bg-white/10 p-2 text-sm rounded-md" %>
+            <%= link_to "View", "/employees/#{employee.id}", class: "bg-white/10 p-2 text-sm rounded-md" %>
+            <%= link_to "Delete", "/employees/#{employee.id}", method: :delete, data: {confirm: "Are you sure to delete?"}, class: "bg-red-600/30 p-2 text-sm rounded-md" %>
+          </td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+      <% end %>
+</div>
