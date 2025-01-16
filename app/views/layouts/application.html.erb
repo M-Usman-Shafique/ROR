@@ -18,16 +18,14 @@
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
   </head>
 
-  <body>
-  <div>
-  <%= link_to "Home", root_path %>
-  <%= link_to "About Us", about_path %>
-  <%= link_to "Contact Us", contact_path %>
-  </div>
+  <body class="bg-neutral-900 text-gray-300">
+  <%= render "shared/navbar" %>
     <%= yield %>
-  <p>FOOTER</p>
+  <%= render "shared/footer" %>
+
   </body>
 </html>
