@@ -4,10 +4,17 @@
       <%= flash[:notice] %>
     </div>
   <% end %>
+
+  <% if flash[:alert] %>
+    <div class="bg-red-600 text-gray-200 px-3 py-2 rounded-lg mb-6">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+
       <% if @employees.empty? %>
           <p class="px-4 py-2 text-center text-gray-500">No users</p>
       <% else %>
-  <table class="w-full max-w-2xl rounded-lg shadow-lg">
+  <table class="w-full max-w-4xl rounded-lg shadow-lg">
     <thead>
       <tr class="border border-white/15">
         <th class="px-4 py-2 text-left">Name</th>
