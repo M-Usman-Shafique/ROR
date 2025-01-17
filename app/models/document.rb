@@ -4,5 +4,6 @@ class Document < ApplicationRecord
   .freeze
 
   belongs_to :employee
+  has_one_attached :image
   validates :name, :category, presence: true
 end
