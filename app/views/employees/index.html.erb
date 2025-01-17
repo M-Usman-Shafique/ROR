@@ -1,16 +1,4 @@
 <div class="min-h-[calc(100vh-20vh)] flex flex-col items-center justify-center">
-  <% if flash[:notice] %>
-    <div class="bg-green-600 text-gray-200 px-3 py-2 rounded-lg mb-6">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
-
-  <% if flash[:alert] %>
-    <div class="bg-red-700 text-gray-200 px-3 py-2 rounded-lg mb-6">
-      <%= flash[:alert] %>
-    </div>
-  <% end %>
-
       <% if @employees.empty? %>
           <p class="px-4 py-2 text-center text-gray-500">No employee</p>
       <% else %>
