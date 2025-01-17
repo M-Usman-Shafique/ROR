@@ -2,6 +2,8 @@
 Rails.application.routes.draw do
   root "home#index"
   resources :employees
+  resources :documents
+
   get "about", to: "home#about"
   get "contact", to: "home#contact"
 

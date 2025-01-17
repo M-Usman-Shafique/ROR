@@ -1,4 +1,4 @@
-class EmployeesController < ApplicationController
+class EmployeesController < ApplicationController    
     before_action :set_employee, only: [:edit, :update, :show, :destroy]
 
     def index
