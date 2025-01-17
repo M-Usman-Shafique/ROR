@@ -1,4 +1,4 @@
-class DocumentsController < ApplicationController    
+class DocumentsController < ApplicationController
     before_action :set_document, only: [:edit, :update, :show, :destroy]
 
     def index

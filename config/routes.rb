@@ -1,5 +1,6 @@
 # config/routes.rb
 Rails.application.routes.draw do
+  devise_for :users
   root "home#index"
   resources :employees
   resources :documents

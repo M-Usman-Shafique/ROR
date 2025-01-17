@@ -1,9 +1,13 @@
 <div class="bg-white/10 p-3 flex items-center justify-center gap-4">
   <%= link_to "Home", "/", class: "hover:bg-white/10 px-3 py-1.5 rounded" %>
-  <%= link_to "About", "/about", class: "hover:bg-white/10 px-3 py-1.5 rounded" %>
-  <%= link_to "Contact", "/contact", class: "hover:bg-white/10 px-3 py-1.5 rounded" %>
   <%= link_to "Employees", "/employees", class: "hover:bg-white/10 px-3 py-1.5 rounded" %>
   <%= link_to "+ Add Employee", "/employees/new", class: "hover:bg-white/10 px-3 py-1.5 rounded" %>
   <%= link_to "Documents", "/documents", class: "hover:bg-white/10 px-3 py-1.5 rounded" %>
   <%= link_to "+ Add Document", "/documents/new", class: "hover:bg-white/10 px-3 py-1.5 rounded" %>
+  <% if user_signed_in? %>
+  <p><%= current_user.email %></p>
+  <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure to sign out?"}, class: "bg-red-600/60 px-3 py-1.5 rounded" %>
+  <% else %>
+  <%= link_to "Sign in", new_user_session_path, class: "hover:bg-white/10 px-3 py-1.5 rounded" %>
+  <% end %>
 </div>
